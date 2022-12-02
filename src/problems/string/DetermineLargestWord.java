@@ -2,18 +2,25 @@ package problems.string;
 
 public class DetermineLargestWord {
 
-    /*
-     *
-     * implement a code to find the length and longest word in the given sentence
-     * should return "10" (for length), "biological" (longest word)
-     *
-     */
-
     public static void main(String[] args) {
 
-        String str = "Human brain is a biological learning machine";
+        System.out.println(LongWord());
+        System.out.println(LongWord().length());
+    }
 
-        //write your code here
+    public static String LongWord (){
+
+        String[] words = ("Human brain is a biological learning machine").split(" ");
+
+
+        String largest = words[0];
+
+        for (int i = 1; i < words.length; i++){
+
+            if (largest.length() < words[i].length())
+                largest = words[i];
+        }
+        return largest;
 
     }
 

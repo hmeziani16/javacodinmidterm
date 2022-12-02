@@ -16,6 +16,20 @@ public class FindMissingNumber {
 
         int[] array = new int[]{10, 2, 1, 4, 5, 3, 7, 8, 6};
 
+        System.out.println(Helper(array));
+
+
+
+    } public static  int Helper ( int [] array){
+
+        int n = array.length + 1;
+
+        int sum = (n * (n+1))/2;
+
+        for (int i = 0 ; i < array.length; i++) {
+            sum = sum - array [i];
+        }return sum;
+
 
 
     }

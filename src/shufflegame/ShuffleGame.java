@@ -1,20 +1,46 @@
 package shufflegame;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ShuffleGame implements GameRoadMap{
 
+
+
     Scanner scanner = new Scanner(System.in);
+    int input;
+    String inputSc;
+
 
     int[] array = {1, 0 ,1};
 
-    /**
-     * method that takes an array shuffles the components in random way and returns it
-     * @param array: array to shuffle
-     * @return array: shuffled array
-     */
+    public void welcome (){
+        System.out.println("----------------------------------welcome to shuffle game-------------------------------");
+        System.out.println("guess where the 0 is ?");
+        System.out.println("are you ready to play? y/n");
+
+
+    }
+    public void selection () {
+
+            inputSc = scanner.nextLine();
+            if (inputSc.equalsIgnoreCase("y")){
+
+                playerGuess();
+            } else if (inputSc.equalsIgnoreCase("n")) {
+                System.out.println("see you next time!");
+            }else {
+            System.out.println("are you ready to play? y/n");
+                selection();
+            }
+
+
+        }
+
+
+
     public int[] shuffleGame(int[] array) {
         Random rnd = ThreadLocalRandom.current();
         for (int i = array.length - 1; i > 0; i--) {
@@ -28,11 +54,18 @@ public class ShuffleGame implements GameRoadMap{
 
     /**
      * captures the user input (1, 2 or 3) saves it in an integer variable and returns it
+     *
      * @return playerGuess: userInput value
      */
     public int playerGuess() {
-        //implement here
-        return 0;
+
+
+        System.out.println("pick 1, 2 or 3! [*, *, *]");
+
+        input = scanner.nextInt();
+
+
+        return input;
     }
 
     /**
@@ -42,15 +75,86 @@ public class ShuffleGame implements GameRoadMap{
      * @param playerGuess: takes the chosen position user input
      */
     public void checkGuess(int[] shuffledArray, int playerGuess) {
-        //implement here
+
+       // shuffleGame(array);
+
+
+        if(input == 1){
+
+            if (shuffledArray[0]== 0 ) {
+                System.out.println("good guess!"+ Arrays.toString(shuffledArray));
+                //anOtherTry();
+            }else System.out.println("sorry!!! wrong guess!"+ Arrays.toString(shuffledArray));
+            //anOtherTry();
+
+        }
+
+       else if(playerGuess==2){
+
+            if (shuffledArray[1]==0){
+                System.out.println("good guess!"+ Arrays.toString(shuffledArray));
+                //anOtherTry();
+            }else System.out.println("sorry!!! wrong guess!"+ Arrays.toString(shuffledArray));
+            //anOtherTry();
+
+        }
+
+       else if(playerGuess==3){
+
+            if (shuffledArray[2]==0){
+                System.out.println("good guess!"+ Arrays.toString(shuffledArray));
+                //anOtherTry();
+            }else
+                System.out.println("sorry!!! wrong guess!"+ Arrays.toString(shuffledArray));
+            //anOtherTry();
+
+
+       }
+       else {
+           System.out.println("pick 1, 2 ?or 3! [*, *, *]");
+
+
+        }//anOtherTry();
+
+
+
     }
+
+    void anOtherTry(){
+
+       System.out.println("Do you want to try again? y/n");
+
+        inputSc = scanner.nextLine();
+        if (inputSc.equalsIgnoreCase("y")){
+
+            playerGuess();
+
+
+        } else if (inputSc.equalsIgnoreCase("n")) {
+            System.out.println("see you next time!");
+        }else {
+            anOtherTry();
+        }
+
+    }
+
+
 
     /**
      * uses the previous functions in a good sequential way to run the game
      * uses the method recursion in order to loop in the game
      */
     public void play() {
-        //implement here
+        welcome();
+        selection();
+        playerGuess();
+        checkGuess(shuffleGame(array),input);
+        anOtherTry();
+        play();
+
+
+
+
     }
 
 }

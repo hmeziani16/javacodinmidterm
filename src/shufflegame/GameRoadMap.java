@@ -2,7 +2,7 @@ package shufflegame;
 
 public interface GameRoadMap {
 
-    public int[] shuffleGame(int[] array);
+    public int[] shuffleGame(int[]array);
 
     public int playerGuess();
 
