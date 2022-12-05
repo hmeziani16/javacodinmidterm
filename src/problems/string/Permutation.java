@@ -1,10 +1,12 @@
 package problems.string;
 
+import java.util.ArrayList;
+
 public class Permutation {
 
     public static void main(String[] args) {
 
-        public static void main(String[] args) {
+
             String str = "bob";
             int n = str.length();
 
@@ -42,4 +44,4 @@ public class Permutation {
 
 
     }
-}
+

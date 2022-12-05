@@ -2,34 +2,51 @@ Please answer the below Data Structure Questions:
 
 Q. why do we need data structure?
 A.
-
+provide an efficient way of storing and
+organizing data in the computer making possible utilizing them more efficiently.
 ------------------------------------------------------------------------------------------------------------------------
 What are the various operations that can be performed on different Data Structures?
 A.
-
+Insertion , deletion, searching, sorting
 ------------------------------------------------------------------------------------------------------------------------
 Q. List out the areas in which data structures are applied extensively?
 A.
 
+    Data structures are used in any program or software.
+    They are used in the areas of
+    Compiler Design
+    Operating System
+    DBMS
+    Graphics
+    Simulation
+    Numerical Analysis
+    Artificial Intelligence
+
 ------------------------------------------------------------------------------------------------------------------------
 Q. What is an Array?
-A.
+
+A.An array is a container object that holds a fixed number of values of a single type.
 
 ------------------------------------------------------------------------------------------------------------------------
 Q. What is the difference between the Array and ArrayList?
-A.
+A.Array is a fixed-length data structure while ArrayList is a variable-length Collection class
+array = primitive type , arraylist = wrapper type (object)
 
 ------------------------------------------------------------------------------------------------------------------------
 Q. What is LinkedList?
-A.
+A.provides the functionality of the linked list data structure (doubly linkedlist).
 
 ------------------------------------------------------------------------------------------------------------------------
 Q. How is an ArrayList different from Linked List?
-A.
-
+A.arraye list : uses a dynamic array to store the elements.Manipulation with ArrayList is slow,
+better for storing and accessing data.
+Linkedlist:uses a doubly linked list , Manipulation with LinkedList is faster than ArrayList
+because it uses a doubly linked list, so no bit shifting is required in memory.
+better for manipulating data.
 ------------------------------------------------------------------------------------------------------------------------
 Q. What is the difference between the HashTable and HashMap?
-A.
+A.HashMap allows one null key and multiple null values whereas Hashtable doesn't allow any null key or value.
+HashMap is non-synchronized whereas Hashtable is synchronized,
 
 ------------------------------------------------------------------------------------------------------------------------
 Q. What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model?
@@ -37,12 +54,21 @@ A.
 
 ------------------------------------------------------------------------------------------------------------------------
 Q. How HashMap works in java?
-A.
+A.Map , represents a mapping between a key and a value. More specifically,
+a Java Map can store pairs of keys and values. Each key is linked to a specific value.
+Once stored in a Map , you can later look up the value using just the key
 
 ------------------------------------------------------------------------------------------------------------------------
 Q. What is ArrayIndexOutOfBoundsException in java? When it occurs?
 A.
-
+The ArrayIndexOutOfBoundsException is a runtime exception in Java that occurs
+when an array is accessed with an illegal index.
+The index is either negative or greater than or equal to the size of the array
 ------------------------------------------------------------------------------------------------------------------------
 Q. What are the different ways of copying an array into another array?
 A.
+Create a new array of the same length and copy each element.
+
+Use the clone method of the array. Clone methods create a new array of the same size.
+
+Use System.arraycopy() method. arraycopy can be used to copy a subset of an array.

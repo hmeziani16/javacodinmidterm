@@ -1,5 +1,8 @@
 package datastructure.collections;
 
+import java.util.HashSet;
+import java.util.Iterator;
+
 public class UseHashSet {
 
     /*
@@ -12,8 +15,39 @@ public class UseHashSet {
      */
 
     public static void main(String[] args) {
+        HashSet<Integer> h = new HashSet<Integer>();
+        h.add(3);
+        h.add(3);
+        h.add(4);
+        h.add(1);
+        h.add(1);
+        h.add(7);
+        h.add(1);
+        h.add(0);
+        h.add(7);
+        h.add(4);
+        h.add(5);
+        h.add(0);
+        h.add(9);
+        h.add(8);
+        h.add(2);
 
-        //write your code here
+        h.remove(2);
+
+
+
+        for (int i = 7; i< h.size(); i++)  {
+
+            System.out.println(h);
+
+
+        }
+       Iterator<Integer> it = h.iterator();
+       while (it.hasNext()) {
+           System.out.print(it.next()+ ",");
+       }
+       // }
+
 
     }
 }

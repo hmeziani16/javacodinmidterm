@@ -128,29 +128,31 @@ public class ShuffleGame implements GameRoadMap{
         if (inputSc.equalsIgnoreCase("y")){
 
             playerGuess();
+            checkGuess(shuffleGame(array),input);
+            anOtherTry();
+
+
 
 
         } else if (inputSc.equalsIgnoreCase("n")) {
             System.out.println("see you next time!");
+
         }else {
             anOtherTry();
+
         }
 
     }
 
-
-
-    /**
-     * uses the previous functions in a good sequential way to run the game
-     * uses the method recursion in order to loop in the game
-     */
     public void play() {
         welcome();
         selection();
-        playerGuess();
+
         checkGuess(shuffleGame(array),input);
+
         anOtherTry();
-        play();
+
+
 
 
 

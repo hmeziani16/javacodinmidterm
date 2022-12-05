@@ -1,42 +1,43 @@
 package datastructure.collections;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 
 public class UseCollections {
 
-    Integer[] array1 = {1, 3, 2, 4, 8, 9, 0};
-    Integer[] array2 = {1, 3, 7, 5, 4, 0, 7, 5};
 
-    var list1 = Arrays.asList(array1);
-    var list2 = Arrays.asList(array2);
+    public static void main(String[] args) {
 
-    //System.out.println(list1);
-    //System.out.println(list2);
+        Integer[] array1 = {1, 3, 2, 4, 8, 9, 0};
+        Integer[] array2 = {1, 3, 7, 5, 4, 0, 7, 5};
 
-    //System.out.println();
 
-    HashSet <Integer> union = new HashSet<>();
+        List<Integer> list1 = Arrays.asList(array1);
+        List<Integer> list2 = Arrays.asList(array2);
+
+        System.out.println(list1);
+        System.out.println(list2);
+
+        System.out.println();
+
+        HashSet<Integer> union = new HashSet<>();
 
         Collections.addAll(union, array1);
         Collections.addAll(union, array2);
 
+
         System.out.println(union);
 
 
-    Set<Integer> s1 = new HashSet<Integer>(Arrays.asList(array1));
-    Set<Integer> s2 = new HashSet<Integer>(Arrays.asList(array2));
+
+        Set<Integer> s1 = new HashSet<Integer>(Arrays.asList(array1));
+        Set<Integer> s2 = new HashSet<Integer>(Arrays.asList(array2));
         s1.retainAll(s2);
 
-    Integer[] result = s1.toArray(new Integer[s1.size()]);
+        Integer[] result = s1.toArray(new Integer[s1.size()]);
         System.out.println(Arrays.toString(result));
 
-
-
-
-        /* HashSet <Integer> h = new HashSet<>();
+        HashSet <Integer> h = new HashSet<>();
 
         for ( int i=0; i<array1.length;i++){
             h.add(array1[i]);
@@ -49,16 +50,15 @@ public class UseCollections {
 
         System.out.println(h);
 
-        /*
-
-
-
-
-
-    public static void main(String[] args) {
-
-        //write your code here
 
     }
 
 }
+
+
+
+
+
+
+
+

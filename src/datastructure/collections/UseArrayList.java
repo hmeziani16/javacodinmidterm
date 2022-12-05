@@ -12,7 +12,7 @@ public class UseArrayList {
 
     public static void main(String[] args) {
 
-        ArrayList countrylist = new ArrayList();
+        ArrayList<String> countrylist = new ArrayList<>();
 
         countrylist.add ("japan");
         countrylist.add ("australia");

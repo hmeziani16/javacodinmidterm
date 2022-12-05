@@ -1,5 +1,10 @@
 package readfile;
 
+import java.io.*;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
+
 public class ReadTextFile {
     /*
      *
@@ -19,7 +24,42 @@ public class ReadTextFile {
 
     public static void main(String[] args) {
 
-        //write your code here
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("src/readfile/file-data"));
+
+            String s;
+            while ((s = reader.readLine()) != null) {
+                String [] words = s.split(" ");
+                LinkedList wordsListe = new LinkedList(Arrays.asList(words));
+
+
+                Iterator it = wordsListe.iterator();
+
+
+
+                while (it.hasNext()) {
+                    System.out.println(it.next().toString());
+
+                }
+
+
+
+                //for (Object index : wordsListe) {
+
+                  //  System.out.println(index);
+
+              //  }
+
+
+              //  System.out.println(wordsListe.size( ) );
+
+
+
+            }
+            reader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
